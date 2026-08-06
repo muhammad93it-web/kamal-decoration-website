@@ -12,10 +12,11 @@ function seo_head(array $o = []): void
     $fullTitle = $title !== '' ? $title . ' — ' . $siteName : setting('seo_title', $siteName);
     $desc = trim($o['desc'] ?? '') ?: setting('seo_description', setting('tagline'));
     $desc = excerpt_of($desc, 300);
-    $urlAbs = $o['url'] ?? (site_base() . ($_SERVER['REQUEST_URI'] ?? '/'));
+    $urlAbs = $o['url'] ?? ($_SERVER['REQUEST_URI'] ?? '/');
     $urlAbs = strtok($urlAbs, '?') ?: $urlAbs;
+    $urlAbs = absolutize($urlAbs);
     $img = $o['image'] ?? setting('og_image');
-    if ($img !== '' && !preg_match('#^https?://#', $img)) $img = upload_url($img);
+    if ($img !== '' && !preg_match('#^https?://#', $img)) $img = absolutize(upload_url($img));
     $type = $o['type'] ?? 'website';
 
     echo '<title>' . e($fullTitle) . "</title>\n";
@@ -52,7 +53,7 @@ function jsonld_localbusiness(): void
         ],
     ];
     $logo = setting('logo_path');
-    if ($logo !== '') $data['image'] = upload_url($logo);
+    if ($logo !== '') $data['image'] = absolutize(upload_url($logo));
     $maps = setting('maps_link');
     if ($maps !== '') $data['hasMap'] = $maps;
     echo '<script type="application/ld+json">'

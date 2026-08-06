@@ -88,7 +88,7 @@ function admin_header(string $title, string $active = ''): void
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
 <link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=1">
 <style>:root{--accent:<?= e(setting('color_accent', '#BFA05A')) ?>;}</style>
-<script>window.KD_BASE = <?= json_encode(site_base(), JSON_UNESCAPED_SLASHES) ?>;</script>
+<script>window.KD_BASE = <?= json_encode(site_path(), JSON_UNESCAPED_SLASHES) ?>;</script>
 </head>
 <body class="admin-body">
 <button class="a-burger" id="aBurger" aria-label="menu">☰</button>

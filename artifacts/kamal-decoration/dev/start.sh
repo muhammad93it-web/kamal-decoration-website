@@ -66,5 +66,8 @@ fi
 php -c "$DIR/dev/php.ini" "$SITE/tools/dev-seed.php" || echo "[dev] seed step reported a problem (continuing)"
 
 # 6) Serve the site (router emulates .htaccess clean URLs)
+# php -S is single-threaded by default; browsers fetch CSS/JS/images in parallel,
+# so give it workers or asset requests can time out behind the preview proxy.
+export PHP_CLI_SERVER_WORKERS=8
 echo "[dev] serving on port ${PORT:?PORT env var is required}"
 exec php -c "$DIR/dev/php.ini" -S 0.0.0.0:"$PORT" -t "$SITE" "$DIR/dev/router.php"

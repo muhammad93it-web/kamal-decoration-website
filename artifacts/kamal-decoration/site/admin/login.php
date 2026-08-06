@@ -19,8 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $error = t('a_login_locked', 'هەوڵی زۆر — ١٠ خولەک چاوەڕێبکە و دووبارە هەوڵبدەوە.');
     } elseif (attempt_login($username, $password)) {
         $next = (string)($_GET['next'] ?? '');
-        // only allow redirects inside the admin area
-        if ($next !== '' && str_starts_with($next, site_base() . '/admin/')) {
+        // only allow redirects inside the admin area (relative or same-site absolute)
+        $adminPrefix = url('admin/');
+        $okRel = $next !== '' && str_starts_with($next, $adminPrefix)
+            && !str_contains($next, '//') && !str_contains($next, '\\');
+        $okAbs = $next !== '' && str_starts_with($next, site_base() . '/admin/');
+        if ($okRel || $okAbs) {
             redirect($next);
         }
         redirect(admin_url(''));

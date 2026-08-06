@@ -35,7 +35,7 @@ $related = $rel->fetchAll();
 track_page_view('product', (int)$p['id']);
 bump_views('products', (int)$p['id']);
 
-$pageUrl = url('product/' . rawurlencode($p['slug']));
+$pageUrl = abs_url('product/' . rawurlencode($p['slug']));
 $waText = t_replace(t('wa_product'), ['name' => $p['name'], 'code' => (string)$p['code'], 'url' => $pageUrl]);
 
 $PAGE = ['title' => $p['name'], 'desc' => $p['short_desc'] ?? '', 'image' => $p['main_image'] ?? '', 'nav' => 'products', 'type' => 'product'];

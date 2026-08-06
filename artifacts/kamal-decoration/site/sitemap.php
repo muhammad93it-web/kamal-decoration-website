@@ -9,29 +9,29 @@ $add = function (string $loc, ?string $lastmod = null, string $freq = 'weekly', 
     $urls[] = ['loc' => $loc, 'lastmod' => $lastmod, 'freq' => $freq, 'prio' => $prio];
 };
 
-$add(url(''), null, 'daily', '1.0');
+$add(abs_url(''), null, 'daily', '1.0');
 foreach (['products.php', 'palettes.php', 'projects.php', 'gallery.php', 'posts.php', 'about.php', 'contact.php', 'scanner.php'] as $pth) {
-    $add(url($pth), null, 'weekly', '0.7');
+    $add(abs_url($pth), null, 'weekly', '0.7');
 }
 
 $db = db();
 foreach ($db->query("SELECT slug, updated_at FROM products WHERE is_active = 1") as $r) {
-    $add(url('product/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'weekly', '0.8');
+    $add(abs_url('product/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'weekly', '0.8');
 }
 foreach ($db->query("SELECT slug FROM categories WHERE type = 'product' AND is_active = 1") as $r) {
-    $add(url('category/' . rawurlencode($r['slug'])), null, 'weekly', '0.6');
+    $add(abs_url('category/' . rawurlencode($r['slug'])), null, 'weekly', '0.6');
 }
 foreach ($db->query("SELECT slug, updated_at FROM palettes WHERE is_active = 1") as $r) {
-    $add(url('palette/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'weekly', '0.7');
+    $add(abs_url('palette/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'weekly', '0.7');
 }
 foreach ($db->query("SELECT slug, updated_at FROM palette_shades WHERE is_active = 1") as $r) {
-    $add(url('shade/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.5');
+    $add(abs_url('shade/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.5');
 }
 foreach ($db->query("SELECT slug, updated_at FROM projects WHERE is_active = 1") as $r) {
-    $add(url('project/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.7');
+    $add(abs_url('project/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.7');
 }
 foreach ($db->query("SELECT slug, updated_at FROM posts WHERE is_published = 1 AND published_at <= NOW()") as $r) {
-    $add(url('post/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.6');
+    $add(abs_url('post/' . rawurlencode($r['slug'])), $r['updated_at'] ? date('Y-m-d', strtotime($r['updated_at'])) : null, 'monthly', '0.6');
 }
 
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";

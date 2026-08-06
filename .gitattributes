@@ -1,1 +1,2 @@
 artifacts/kamal-decoration/.devdb/data/ib_logfile0 filter=lfs diff=lfs merge=lfs -text
+artifacts/kamal-decoration/kamal-decoration-site.zip filter=lfs diff=lfs merge=lfs -text

@@ -41,7 +41,7 @@ $products = $pr->fetchAll();
 
 track_page_view('shade', (int)$s['id']);
 
-$pageUrl = url('shade/' . rawurlencode($s['slug']));
+$pageUrl = abs_url('shade/' . rawurlencode($s['slug']));
 $waText = t_replace(t('wa_shade'), ['name' => $s['name'], 'code' => $s['code'], 'url' => $pageUrl]);
 
 $PAGE = ['title' => $s['name'] . ' (' . $s['code'] . ')', 'desc' => t('shade_palette') . ' ' . $s['palette_name'], 'nav' => 'palettes'];

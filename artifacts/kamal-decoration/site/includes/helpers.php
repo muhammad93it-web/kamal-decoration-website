@@ -37,9 +37,42 @@ function site_base(): string
     return $base = base_url_guess();
 }
 
+/** Path prefix of the configured base URL ('' when installed at the domain root). */
+function site_path(): string
+{
+    static $p = null;
+    if ($p !== null) return $p;
+    $path = (string)(parse_url(site_base(), PHP_URL_PATH) ?? '');
+    return $p = rtrim($path, '/');
+}
+
+/**
+ * Origin-relative URL (e.g. "/shade/rose"). Keeps links, CSS, and fonts
+ * same-origin no matter which host/proxy serves the page — critical behind
+ * Replit's preview proxy and harmless on shared hosting.
+ */
 function url(string $path = ''): string
 {
+    return site_path() . '/' . ltrim($path, '/');
+}
+
+/** Absolute URL — only for QR codes, sitemap, canonical/OG tags, share links. */
+function abs_url(string $path = ''): string
+{
     return site_base() . '/' . ltrim($path, '/');
+}
+
+/** Make any app URL absolute (leaves already-absolute URLs untouched). */
+function absolutize(string $u): string
+{
+    if ($u === '' || preg_match('#^https?://#i', $u)) return $u;
+    if ($u[0] === '/') {
+        $base = site_base();
+        $path = rtrim((string)(parse_url($base, PHP_URL_PATH) ?? ''), '/');
+        $origin = $path !== '' ? substr($base, 0, strlen($base) - strlen($path)) : $base;
+        return $origin . $u;
+    }
+    return abs_url($u);
 }
 
 function asset(string $rel): string
