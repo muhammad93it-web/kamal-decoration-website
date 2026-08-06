@@ -1,45 +1,30 @@
-# [Project name]
+# KAMAL DECORATION — دیکۆراتی کەمال
 
-_Replace the heading above with the project's name, and this line with one sentence describing what this app does for users._
+## Overview
+Production website + admin dashboard for **Kamal Decoration**, a home-decoration business in Ranya, Kurdistan (phone/WhatsApp 0750 024 4706). Built per the detailed prompt in `attached_assets/Kamal_Decoration_Replit_AI_Prompt_1786038074264.txt`.
 
-## Run & Operate
+**Deliverable stack (non-negotiable):** PHP 8.1+ / MySQL / HTML / CSS / vanilla JS / PDO. No Node, no frameworks, no CDNs — everything vendored. Deploys to Namecheap shared hosting by uploading `site/` and following the Kurdish README inside it.
 
-- `pnpm --filter @workspace/api-server run dev` — run the API server (port 5000)
-- `pnpm run typecheck` — full typecheck across all packages
-- `pnpm run build` — typecheck + build all packages
-- `pnpm --filter @workspace/api-spec run codegen` — regenerate API hooks and Zod schemas from the OpenAPI spec
-- `pnpm --filter @workspace/db run push` — push DB schema changes (dev only)
-- Required env: `DATABASE_URL` — Postgres connection string
+## Structure (`artifacts/kamal-decoration/`)
+- `site/` — **the portable deliverable.** Public pages at root, `includes/` core (bootstrap, auth, csrf, codes, uploads, track, seo, social), `admin/` dashboard, `install/` Kurdish web installer, `database.sql` (schema + Kurdish sample content), `libraries/vendor/` (mPDF, chillerlan/php-qrcode v5, picqer barcode, HTMLPurifier), `assets/` (self-hosted fonts/JS/CSS), Kurdish `README.md` deploy guide.
+- `dev/` — Replit-only harness, **never shipped**: `start.sh` (MariaDB on 127.0.0.1:3307, socket /tmp/kamal-mysql.sock, db `kamal_decoration`, auto-import + seed), `router.php` (php -S router mirroring `.htaccess`), `fetch-vendor.sh`.
+- Workflow: `artifacts/kamal-decoration: web` → `bash dev/start.sh`.
 
-## Stack
+## Key conventions
+- Whole UI Kurdish Sorani, `lang="ckb" dir="rtl"`, utf8mb4. Kurdish strings via `t('key', 'inline default')` — always pass inline defaults.
+- Design "Warm Atelier": charcoal #232120, bone #FAF7F2, gold #BFA05A (dynamic via `color_accent` setting), Noto Kufi Arabic + Vazirmatn (self-hosted `assets/css/fonts.css`).
+- Codes: palettes KD-P###, shades KD-S###, products KD-PR##. QR encodes `{site_url}/p/{CODE}`; regenerate from admin → ئامرازەکانی QR after domain change.
+- Uploads: JPG/PNG/WebP/GIF only (finfo-validated, **no SVG**); logo/favicon stored as-is (`no_recompress`), other images get thumbnails.
+- Clean URLs live in BOTH `site/.htaccess` (production) and `dev/router.php` (preview) — keep in sync. Extensionless pages (`/products`) map to `products.php`.
+- `install.lock` lives at `config/install.lock` (bootstrap, installer, and dev tools all agree).
+- Roles: `super_admin`, `editor` (tables `roles`/`user_roles`). Super-only pages: users.php, backups.php.
 
-- pnpm workspaces, Node.js 24, TypeScript 5.9
-- API: Express 5
-- DB: PostgreSQL + Drizzle ORM
-- Validation: Zod (`zod/v4`), `drizzle-zod`
-- API codegen: Orval (from OpenAPI spec)
-- Build: esbuild (CJS bundle)
-
-## Where things live
-
-_Populate as you build — short repo map plus pointers to the source-of-truth file for DB schema, API contracts, theme files, etc._
-
-## Architecture decisions
-
-_Populate as you build — non-obvious choices a reader couldn't infer from the code (3-5 bullets)._
-
-## Product
-
-_Describe the high-level user-facing capabilities of this app once they exist._
+## Dev environment
+- Dev admin login: **admin / Kamal@2026** (created by `site/tools/dev-seed.php`, which also sets `site_url` from the Replit domain, builds thumbnails, generates QR/barcodes).
+- DB shell: `mariadb --socket=/tmp/kamal-mysql.sock -u root kamal_decoration`.
+- `site/config/config.php` + `config/install.lock` are dev-generated (gitignored-style artifacts); production installs via `/install`.
 
 ## User preferences
-
-_Populate as you build — explicit user instructions worth remembering across sessions._
-
-## Gotchas
-
-_Populate as you build — sharp edges, "always run X before Y" rules._
-
-## Pointers
-
-- See the `pnpm-workspace` skill for workspace structure, TypeScript setup, and package details
+- User is **non-technical** and chats in **Kurdish Sorani** — reply in simple Sorani, no jargon, no code talk.
+- User will upload the real logo later themselves: admin → ڕێکخستنەکان → «لۆگۆ و ناسنامە».
+- Target hosting is Namecheap cPanel — do NOT suggest Replit deployment for this project.

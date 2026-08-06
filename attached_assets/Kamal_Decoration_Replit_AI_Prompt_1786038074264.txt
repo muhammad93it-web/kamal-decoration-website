@@ -1,0 +1,1671 @@
+Build a complete, production-ready, secure, modern website and admin management system for a home decoration business.
+
+BUSINESS INFORMATION:
+
+English business name:
+KAMAL DECORATION
+
+Kurdish business name:
+دیکۆراتی کەمال
+
+Location:
+Ranya, Kurdistan Region, Iraq
+
+Phone and WhatsApp:
+0750 024 4706
+
+Main services:
+
+- مەوادی مەغریبی
+- جێسم بۆرد
+- پلاستیکی دیوار و سەقف
+- تەختەی تەرز
+- فۆمی 3D
+- کاغەزی دیوار
+- بدیلی خەشەب
+- WPC
+- دیکۆراتی ناوخۆ
+
+All business information must be editable later from the admin dashboard.
+
+I will provide the official business logo separately.
+
+When I upload the logo:
+
+- Use the exact uploaded logo.
+- Do not redraw it.
+- Do not redesign it.
+- Do not replace it.
+- Do not modify its colors or shape.
+- Preserve its original quality and proportions.
+
+==================================================
+STRICT AND NON-NEGOTIABLE TECHNOLOGY REQUIREMENTS
+==================================================
+
+You MUST develop the entire project using ONLY:
+
+- PHP 8.1 or newer
+- MySQL
+- HTML5
+- CSS3
+- Vanilla JavaScript
+- PDO for database operations
+
+Bootstrap 5 RTL may be used only when necessary, but the website must not look like a generic Bootstrap template.
+
+The final project MUST run fully on:
+
+- Namecheap Shared Hosting
+- cPanel
+- Apache
+- PHP
+- MySQL
+- phpMyAdmin
+
+The completed project must work after:
+
+1. Uploading all files into the public_html directory.
+2. Creating a MySQL database in cPanel.
+3. Importing the included database.sql file.
+4. Entering the database credentials.
+5. Opening the domain in a browser.
+
+DO NOT use or introduce under any circumstances:
+
+- Node.js
+- npm
+- npx
+- React
+- Next.js
+- Vue
+- Angular
+- Svelte
+- Python
+- Laravel
+- Symfony
+- PostgreSQL
+- Replit Database
+- Neon Database
+- Firebase
+- Supabase
+- MongoDB
+- Docker
+- Redis
+- Any Node-based build process
+- Any background server process
+- Any technology requiring a permanently running terminal command
+- Any Replit-only hosting feature
+- Any database other than MySQL
+
+Do not suggest changing the technology stack.
+
+Do not migrate the project to another framework.
+
+Do not replace MySQL with another database.
+
+Do not create a project that depends on Replit hosting.
+
+Do not create a package.json file.
+
+Do not require npm install.
+
+Do not require npm run build.
+
+Do not require Node.js after development.
+
+If any requested feature would normally use Node.js, implement an alternative solution using PHP, MySQL, HTML, CSS, or vanilla JavaScript.
+
+All required PHP-compatible libraries must be included directly inside the final project.
+
+The project must continue working after being downloaded from Replit and uploaded to Namecheap Shared Hosting.
+
+==================================================
+KURDISH LANGUAGE REQUIREMENTS
+==================================================
+
+The entire public website and the entire admin dashboard MUST be completely in Kurdish Sorani.
+
+Use:
+
+- lang="ckb"
+- dir="rtl"
+- UTF-8
+- MySQL utf8mb4
+- Correct Kurdish Sorani writing
+- Correct Kurdish Sorani grammar
+- Natural and professional Kurdish wording
+- Proper right-to-left layout
+- A professional Kurdish-compatible font
+
+All visible interface content must be in Kurdish Sorani, including:
+
+- Navigation menus
+- Buttons
+- Forms
+- Input labels
+- Placeholders
+- Validation messages
+- Error messages
+- Success messages
+- Warning messages
+- Login page
+- Admin dashboard
+- Settings pages
+- Search pages
+- Search results
+- Empty-state messages
+- Confirmation dialogs
+- QR-code pages
+- Barcode pages
+- Printable labels
+- Product pages
+- Palette pages
+- Project pages
+- Contact page
+- Footer
+- Installer interface
+- Backup interface
+- Media library
+- User management
+- Pagination text
+- Date labels
+- File upload messages
+
+Do not leave English interface text anywhere in the final website.
+
+Technical file names, database table names, database columns, PHP variables, PHP functions, classes, and internal source code may remain in English.
+
+However, everything visible to visitors and administrators MUST be written in Kurdish Sorani.
+
+Do not use poor automatic translations.
+
+Do not use Kurdish text containing spelling or grammatical errors.
+
+The initial active language must be Kurdish Sorani only.
+
+Create the architecture so Arabic and English can be added later, but do not activate them initially.
+
+==================================================
+DESIGN AND VISUAL IDENTITY
+==================================================
+
+Create a luxurious, elegant, modern, highly attractive website for a premium home-decoration showroom.
+
+The website must immediately attract visitors.
+
+The design should feel professional, premium, artistic, clean, and visually impressive.
+
+Use a visual style based on:
+
+- Dark charcoal
+- White
+- Warm beige
+- Natural wood tones
+- Soft gold accents
+- High-quality decoration images
+- Elegant typography
+- Large visual sections
+- Soft shadows
+- Rounded cards
+- Clean spacing
+- Smooth animations
+- Subtle hover effects
+- Smooth scrolling
+- Premium loading effects
+- Glass effects only where suitable
+
+The website must not feel crowded.
+
+Do not place excessive text on the home page.
+
+Use strong visual hierarchy.
+
+Use large images and short, clear Kurdish text.
+
+The website must be:
+
+- Mobile-first
+- Fully responsive
+- Fast
+- SEO-friendly
+- Touch-friendly
+- Easy to navigate
+- Suitable for Android
+- Suitable for iPhone
+- Suitable for tablets
+- Suitable for laptops
+- Suitable for desktop screens
+
+Do not stretch or distort images.
+
+Do not create an ordinary or outdated design.
+
+Do not create a generic Bootstrap layout.
+
+Create an original visual identity suitable for a premium decoration business.
+
+==================================================
+PUBLIC WEBSITE HEADER
+==================================================
+
+Create a beautiful sticky header.
+
+The header must contain:
+
+- Business logo
+- Kurdish business name
+- Home page link
+- Products
+- Color palettes
+- Our projects
+- Gallery
+- Posts
+- About us
+- Contact us
+- Search icon
+- Mobile menu icon
+
+Suggested Kurdish navigation text:
+
+- سەرەکی
+- بەرهەمەکان
+- پالێتەکان
+- نمونەی کارەکانمان
+- گەلەری
+- بابەتەکان
+- دەربارەی ئێمە
+- پەیوەندی
+
+The header must work correctly on mobile.
+
+Add a professional mobile navigation drawer.
+
+Add a social-media top bar or another elegant social section.
+
+Add a floating WhatsApp button.
+
+All header information must be editable from the admin dashboard.
+
+==================================================
+HOME PAGE
+==================================================
+
+Create a highly attractive home page containing the following sections.
+
+1. HERO SECTION
+
+Create a full-width premium hero section.
+
+It may use:
+
+- A high-quality image
+- A slideshow
+- A short optimized video background
+
+The hero section must contain:
+
+- Logo
+- Business name
+- Strong Kurdish headline
+- Short Kurdish description
+- Button to view products
+- Button to browse palettes
+- Button to contact by WhatsApp
+- Dark overlay for readability
+- Professional smooth animation
+
+Use this initial Kurdish content:
+
+Title:
+دیکۆری جوان، ماڵێکی جوانتر
+
+Description:
+نوێترین مۆدێلەکانی دیکۆرات و ڕەنگ بۆ دروستکردنی ژینگەیەکی جوان و مۆدێرن
+
+Buttons:
+
+- بینینی بەرهەمەکان
+- بینینی پالێتەکان
+- پەیوەندی بکە
+
+All hero content must be editable from the admin dashboard.
+
+2. FEATURED CATEGORIES
+
+Display premium category cards.
+
+Initial categories may include:
+
+- WPC
+- دیوارپۆش
+- کاغەزی دیوار
+- PVC Marble
+- Foam
+- سەقف
+- تەختە و پانێڵ
+- دیکۆری ناوخۆ
+- مۆڵدینگ
+- مەوادی دیکۆراتی تر
+
+The administrator must be able to add, edit, delete, reorder, enable, and disable categories.
+
+3. LATEST COLOR PALETTES
+
+Display newly added palettes using modern cards.
+
+Each card may show:
+
+- Palette cover image
+- Palette name
+- Palette code
+- Main color family
+- Number of shades
+- View button
+
+4. LATEST PRODUCTS
+
+Display recently added or featured products.
+
+5. LATEST PROJECTS
+
+Display completed decoration projects in an attractive gallery.
+
+6. BEFORE AND AFTER SECTION
+
+Create an interactive before-and-after image comparison slider.
+
+It must support touch movement on mobile.
+
+7. LATEST POSTS
+
+Automatically display recently published posts.
+
+8. CALL-TO-ACTION SECTION
+
+Include buttons for:
+
+- Phone call
+- WhatsApp
+- Messenger
+- Visit showroom
+- Google Maps location
+
+9. CUSTOMER TESTIMONIALS
+
+Create a customer testimonial section.
+
+Testimonials must be manageable from the admin dashboard.
+
+10. FOOTER
+
+The footer must include:
+
+- Logo
+- Kurdish business name
+- Short business description
+- Quick links
+- Product categories
+- Social-media icons
+- Phone
+- WhatsApp
+- Address
+- Working hours
+- Google Maps link
+- Copyright
+- Privacy page
+- Terms page
+
+All footer content must be editable from the dashboard.
+
+==================================================
+COMPLETE SOCIAL-MEDIA MANAGEMENT SYSTEM
+==================================================
+
+Create a complete social-media management section inside the admin dashboard.
+
+The administrator MUST be able to:
+
+- Add unlimited social-media links
+- Edit every social-media link
+- Delete social-media links
+- Enable or disable each link
+- Change the display order
+- Add a custom platform
+- Add a custom platform name
+- Add a profile URL
+- Add a username
+- Add a phone number
+- Add a custom icon
+- Upload an icon
+- Select an available icon
+- Choose whether the link opens in a new browser tab
+- Choose whether the icon appears in the header
+- Choose whether the icon appears in the footer
+- Choose whether the icon appears on the contact page
+- Choose whether the icon appears as a floating button
+- Choose whether the icon appears in the mobile menu
+
+Include support for:
+
+- Facebook
+- Instagram
+- TikTok
+- Snapchat
+- WhatsApp
+- Messenger
+- Viber
+- Telegram
+- YouTube
+- Phone call
+- Email
+- Google Maps
+- Custom social platforms
+
+Do not hardcode social-media URLs inside HTML files.
+
+All social-media information MUST be stored in MySQL.
+
+All social-media links must be controlled dynamically through the admin dashboard.
+
+When the administrator adds, edits, deletes, disables, enables, or reorders a social-media link, the change must immediately appear on the public website without manually editing source-code files.
+
+Create a social_links table containing fields similar to:
+
+- id
+- platform_name
+- platform_key
+- url
+- username
+- phone_number
+- icon
+- icon_type
+- icon_file
+- display_order
+- show_in_header
+- show_in_footer
+- show_on_contact_page
+- show_in_mobile_menu
+- show_as_floating_button
+- open_in_new_tab
+- is_active
+- created_at
+- updated_at
+
+Only enabled social links must appear publicly.
+
+Hide a social icon automatically when its link is empty or disabled.
+
+==================================================
+COLOR PALETTE MANAGEMENT SYSTEM
+==================================================
+
+This is one of the most important sections of the project.
+
+Create a complete palette and color-shade management system.
+
+The administrator must be able to create unlimited palettes.
+
+Each palette must contain:
+
+- Kurdish palette name
+- Optional English name
+- Unique palette code
+- Unique slug
+- Main color family
+- Palette cover image
+- Description
+- Product category
+- Material type
+- Brand
+- Availability status
+- Stock status, optional
+- Display order
+- Featured status
+- Show on home page
+- Published or draft status
+- Creation date
+- Update date
+
+Each palette must contain unlimited shades.
+
+Each shade must contain:
+
+- Kurdish shade name
+- Optional English shade name
+- Unique shade code
+- HEX color code
+- Optional RGB value
+- Color image
+- Texture image
+- Shade display order
+- Darkest-to-lightest ordering
+- Short description
+- Availability status
+- Optional stock status
+- Unique public URL
+- Unique slug
+- Individual QR code
+- Individual barcode
+- Printable label
+- Published or hidden status
+
+For example, a brown palette may contain all brown colors from darkest to lightest.
+
+Display shades in a visually elegant dark-to-light order.
+
+The administrator must be able to:
+
+- Add shades
+- Edit shades
+- Delete shades
+- Duplicate shades
+- Reorder shades
+- Drag and drop shade order when possible
+- Set numerical order
+- Enable or disable shades
+- Upload color or texture images
+- Copy shade codes
+- Print shade labels
+
+Prevent duplicate palette codes.
+
+Prevent duplicate shade codes.
+
+Show a clear Kurdish validation message when a duplicate code exists.
+
+==================================================
+TWO METHODS TO OPEN A PALETTE
+==================================================
+
+Visitors must be able to open palettes using two methods.
+
+METHOD 1: QR CODE OR BARCODE SCANNING
+
+Every palette must have:
+
+- A unique public URL
+- A unique QR code
+- A barcode based on its palette code
+
+Each individual shade may also have:
+
+- A unique public URL
+- A unique QR code
+- A barcode based on its shade code
+
+When a visitor scans a QR code:
+
+- Open the correct palette or shade directly.
+- Display the palette name.
+- Display the palette code.
+- Display all shades.
+- Display images.
+- Display contact buttons.
+- Display share buttons.
+
+Create a mobile scanner page inside the website.
+
+The scanner should use the phone camera when browser support is available.
+
+The scanner page must:
+
+- Clearly request camera permission.
+- Support QR-code scanning.
+- Support common barcodes when possible.
+- Display a Kurdish camera permission message.
+- Display a manual search option.
+- Handle denied camera permission gracefully.
+- Stop the camera after a successful scan.
+- Redirect to the correct palette or shade.
+
+METHOD 2: MANUAL SEARCH
+
+Create a clear search page where visitors can enter:
+
+- Palette name
+- Palette code
+- Shade name
+- Shade code
+- Color family
+- Product name
+- Product code
+
+Show instant suggestions while typing.
+
+The search system must support:
+
+- Kurdish text
+- English letters
+- Numbers
+- Spaces
+- Hyphens
+
+Search should ignore unnecessary spaces where possible.
+
+Display a helpful Kurdish message when no result is found.
+
+Save anonymous search keywords in search logs without collecting unnecessary personal data.
+
+==================================================
+AUTOMATIC QR CODE AND BARCODE GENERATION
+==================================================
+
+When the administrator creates a palette or shade, automatically:
+
+- Generate a unique slug
+- Generate a unique internal identifier
+- Generate a public URL
+- Generate a QR code for the public URL
+- Generate a Code 128 barcode based on the palette or shade code
+- Save the generated QR code file
+- Save the generated barcode file
+- Store their paths in MySQL
+- Organize generated files into folders
+- Avoid duplicate filenames
+
+Do not depend on an external QR-code API.
+
+Do not depend on an external barcode API.
+
+Use reliable PHP-compatible libraries.
+
+Include all required libraries in the project.
+
+The libraries must work after the project is moved to Namecheap.
+
+No npm command may be required to generate QR codes or barcodes.
+
+==================================================
+PRINTABLE LABEL SYSTEM
+==================================================
+
+Create a complete printable label system for palettes and shades.
+
+The administrator must be able to:
+
+- Preview one label
+- Print one label
+- Select multiple labels
+- Print labels in bulk
+- Download labels as PDF
+- Print labels on A4
+- Print multiple labels on one A4 page
+- Choose label size
+- Choose label template
+- Choose which information appears
+
+Provide label sizes such as:
+
+- Small
+- Medium
+- Large
+- A4 palette sheet
+
+Each label may contain:
+
+- Business logo
+- Kurdish business name
+- Palette name
+- Palette code
+- Shade name
+- Shade code
+- Color sample
+- QR code
+- Barcode
+- Phone number
+- Website address
+
+Create clean print CSS.
+
+Labels must not be cut off during printing.
+
+PDF generation must use a PHP-compatible library included in the project.
+
+==================================================
+PUBLIC PALETTE PAGE
+==================================================
+
+Each palette must have a beautiful SEO-friendly public page.
+
+Display:
+
+- Palette name
+- Palette code
+- Cover image
+- Description
+- Category
+- Material
+- Brand
+- Availability
+- All shades
+- Dark-to-light ordering
+- Shade names
+- Shade codes
+- Color or texture previews
+- QR code
+- Share buttons
+- WhatsApp inquiry button
+- Phone button
+- Related palettes
+- Related products
+
+When a visitor selects a shade:
+
+- Open a larger preview
+- Display shade name
+- Display shade code
+- Display HEX code when available
+- Display texture image
+- Allow copying the shade code
+- Allow sharing the shade URL
+- Show a WhatsApp inquiry button
+
+The WhatsApp message must be automatically filled with the palette name, palette code, shade name, and shade code.
+
+==================================================
+PRODUCT MANAGEMENT SYSTEM
+==================================================
+
+Create a complete product-management system.
+
+Each product must support:
+
+- Kurdish product name
+- Optional English name
+- Unique product code
+- Category
+- Brand
+- Material
+- Description
+- Main image
+- Unlimited gallery images
+- Optional video
+- Optional price
+- Optional discount price
+- Availability
+- Stock status
+- Featured status
+- New-product status
+- Related palettes
+- Specifications
+- SEO title
+- SEO description
+- Unique slug
+- Published or draft status
+- Display order
+- Creation date
+- Update date
+
+The administrator must be able to hide prices.
+
+Create filters by:
+
+- Category
+- Color
+- Material
+- Brand
+- Availability
+- New products
+- Featured products
+
+Create a detailed product page.
+
+Add a WhatsApp inquiry button with an automatically prepared Kurdish message containing the product name and code.
+
+==================================================
+PROJECTS AND WORK GALLERY
+==================================================
+
+Create a section for daily work and completed decoration projects.
+
+Each project must support:
+
+- Kurdish project title
+- Location
+- Description
+- Completion date
+- Main image
+- Unlimited gallery images
+- Before image
+- After image
+- Optional video
+- Project category
+- Materials used
+- Related products
+- Featured status
+- Show on home page
+- Show in slideshow
+- Published or draft status
+
+Display projects using:
+
+- Modern masonry grid
+- Full-screen lightbox
+- Beautiful slideshow
+- Before-and-after comparison
+- Video support
+- Smooth transitions
+- Touch navigation
+
+Every project added by the administrator should be eligible to appear in the homepage slider when “Show in slideshow” is enabled.
+
+==================================================
+SLIDESHOW MANAGEMENT
+==================================================
+
+Create a complete slideshow manager.
+
+The administrator must be able to:
+
+- Add an image slide
+- Add a video slide
+- Add a title
+- Add a short description
+- Add a button
+- Change button text
+- Change button URL
+- Set display order
+- Enable or disable a slide
+- Set start date
+- Set end date
+- Select a product as a slide
+- Select a project as a slide
+- Select a post as a slide
+- Upload a desktop image
+- Upload a mobile-specific image
+- Change overlay opacity
+- Change text alignment
+
+The slideshow must:
+
+- Be fully responsive
+- Support touch swiping
+- Autoplay smoothly
+- Pause when needed
+- Include navigation arrows
+- Include indicators
+- Load images efficiently
+- Avoid layout shifting
+- Stop video playback when moving to another slide
+
+==================================================
+POST AND NEWS MANAGEMENT
+==================================================
+
+Create a simple Kurdish CMS for daily posts, news, offers, and announcements.
+
+Each post must support:
+
+- Kurdish title
+- Short summary
+- Full content
+- Main image
+- Multiple images
+- Optional video
+- Category
+- Publish date
+- Featured status
+- Show on home page
+- Show in slideshow
+- Published or draft status
+- SEO title
+- SEO description
+- Unique slug
+
+Use a safe rich-text editor that works without Node.js.
+
+Do not use a rich-text editor requiring npm.
+
+Sanitize rich-text content securely.
+
+==================================================
+ADMIN DASHBOARD
+==================================================
+
+Create a secure, professional, modern, mobile-friendly admin dashboard.
+
+Admin URL:
+
+/admin
+
+The admin login page and dashboard must be entirely in Kurdish Sorani.
+
+The dashboard overview must show:
+
+- Total palettes
+- Total shades
+- Total products
+- Total projects
+- Total posts
+- Published items
+- Draft items
+- Recent content
+- Most-viewed palettes
+- Most-viewed products
+- Recent searches
+- QR-code scan count
+- Barcode scan count when trackable
+- Website visit statistics
+- Recent contact messages
+- Recent administrator activity
+
+Admin menu sections:
+
+1. Dashboard
+2. Palettes
+3. Palette shades
+4. Products
+5. Product categories
+6. Projects
+7. Gallery
+8. Posts
+9. Homepage slider
+10. Social-media links
+11. Contact information
+12. Website settings
+13. Logo and branding
+14. User accounts
+15. QR codes and barcode labels
+16. Backup tools
+17. Search logs
+18. Scan logs
+19. Media library
+20. SEO settings
+21. Testimonials
+22. Contact messages
+23. Activity logs
+
+The administrator must be able to:
+
+- Add
+- Edit
+- Delete
+- Publish
+- Unpublish
+- Duplicate
+- Search
+- Filter
+- Sort
+- Reorder
+- Select multiple items
+- Perform bulk actions
+
+Add Kurdish confirmation dialogs before deletion.
+
+Use image previews before upload.
+
+Allow multiple image upload.
+
+Add drag-and-drop uploading when supported.
+
+Compress and resize uploaded images safely.
+
+Generate thumbnails.
+
+Never stretch or distort images.
+
+==================================================
+MEDIA LIBRARY
+==================================================
+
+Create a reusable media library.
+
+The administrator must be able to:
+
+- Upload images
+- Upload short videos
+- View uploaded files
+- Search uploaded files
+- Filter by type
+- Delete unused files
+- Copy file URLs
+- Reuse existing files
+- View image dimensions
+- View file size
+- Edit alt text
+- View upload date
+
+Organize uploaded files by year and month.
+
+Use safe unique filenames.
+
+Validate file extensions.
+
+Validate MIME types.
+
+Validate file size.
+
+Prevent executable files from being uploaded.
+
+Do not allow PHP, PHAR, CGI, SH, EXE, or other executable uploads.
+
+==================================================
+ADMIN USERS AND SECURITY
+==================================================
+
+Create secure administrator authentication.
+
+Use:
+
+- password_hash()
+- password_verify()
+- Secure PHP sessions
+- PDO prepared statements
+- CSRF tokens
+- Output escaping
+- Input validation
+- Session ID regeneration after login
+- Secure logout
+- Rate limiting for failed login attempts
+- File upload validation
+- Role-based permissions
+
+Create at least two roles.
+
+1. SUPER ADMIN
+
+The Super Admin can:
+
+- Access all sections
+- Manage users
+- Change critical settings
+- Create backups
+- Manage security settings
+
+2. EDITOR
+
+The Editor can:
+
+- Manage palettes
+- Manage products
+- Manage projects
+- Manage posts
+- Manage media
+- Manage slides
+
+The Editor cannot:
+
+- Delete the Super Admin
+- Change critical security settings
+- Manage administrator passwords without permission
+- Access sensitive database configuration
+
+Never store plain-text passwords.
+
+Do not hardcode a real administrator password.
+
+Create a secure first-administrator setup during installation.
+
+Implement:
+
+- Login attempt limits
+- Temporary lockout after repeated failures
+- CSRF protection on all state-changing forms
+- Secure session cookies
+- httponly cookies
+- SameSite cookie settings
+- Secure cookies when HTTPS is active
+
+==================================================
+DATABASE REQUIREMENTS
+==================================================
+
+Create a well-structured MySQL database.
+
+Use:
+
+- InnoDB
+- utf8mb4
+- utf8mb4_unicode_ci or a suitable Kurdish-compatible collation
+- Primary keys
+- Proper indexes
+- Foreign keys where appropriate
+- created_at
+- updated_at
+
+Create appropriate tables including:
+
+- users
+- roles
+- user_roles
+- settings
+- social_links
+- categories
+- products
+- product_images
+- product_palette_relations
+- palettes
+- palette_shades
+- projects
+- project_images
+- posts
+- sliders
+- media
+- searches
+- scan_logs
+- contact_messages
+- testimonials
+- activity_logs
+- login_attempts
+- page_views
+
+Include a complete database.sql file.
+
+Add a small amount of useful Kurdish sample content.
+
+Do not add excessive demo content.
+
+Do not add lorem ipsum.
+
+Use foreign keys safely.
+
+Avoid database structures that are difficult to import into Namecheap phpMyAdmin.
+
+==================================================
+CONTACT PAGE
+==================================================
+
+Create a professional contact page.
+
+Initial contact information:
+
+Phone:
+0750 024 4706
+
+WhatsApp:
+0750 024 4706
+
+Location:
+Ranya
+
+The contact page must include:
+
+- Phone button
+- WhatsApp button
+- Messenger button
+- Address
+- Working hours
+- Google Maps section
+- Contact form
+- Social-media links
+
+The contact form must:
+
+- Validate all fields
+- Use CSRF protection
+- Save messages in MySQL
+- Show messages in the admin dashboard
+- Support standard PHP mail or SMTP configuration
+- Include basic spam protection
+- Include a honeypot field
+- Apply rate limiting
+- Avoid exposing email credentials
+
+Create WhatsApp links with automatically prepared Kurdish messages.
+
+All contact information must be editable from the admin dashboard.
+
+==================================================
+WEBSITE SETTINGS
+==================================================
+
+Create a complete settings page where the administrator can edit:
+
+- English business name
+- Kurdish business name
+- Logo
+- Favicon
+- Phone numbers
+- WhatsApp number
+- Address
+- Google Maps link
+- Google Maps embed code
+- Working hours
+- Website URL
+- Email
+- Footer text
+- Main website colors
+- Hero title
+- Hero description
+- Hero buttons
+- Default SEO title
+- Default SEO description
+- Upload limits
+- Price visibility
+- Currency
+- Maintenance mode
+- Contact information
+- Social-media settings
+
+All settings must be stored in MySQL.
+
+Do not permanently hardcode editable business information inside template files.
+
+==================================================
+SEARCH ENGINE OPTIMIZATION
+==================================================
+
+Implement:
+
+- Clean URLs using .htaccess
+- Dynamic page titles
+- Dynamic meta descriptions
+- Open Graph tags
+- Social sharing images
+- Twitter Card tags
+- Canonical URLs
+- XML sitemap
+- robots.txt
+- Structured data for LocalBusiness
+- Structured data for products when applicable
+- Image alt text
+- Semantic HTML
+- Kurdish SEO-friendly content
+- Breadcrumb navigation
+
+Provide a fallback when Apache mod_rewrite is unavailable.
+
+Generate sitemap content dynamically from published pages.
+
+==================================================
+PERFORMANCE REQUIREMENTS
+==================================================
+
+Optimize the website for speed.
+
+Implement:
+
+- Lazy loading
+- Image thumbnails
+- Responsive image sizes
+- WebP support when the server supports it
+- Image compression
+- Browser caching through .htaccess
+- gzip compression when supported
+- Brotli when supported
+- Minimal JavaScript
+- Minimal third-party libraries
+- Pagination
+- Optimized database queries
+- Database indexes
+- Prevention of cumulative layout shift
+- Deferred non-critical scripts
+- Safe caching where appropriate
+
+The website must perform well on slow mobile internet connections.
+
+Do not load full-resolution images unnecessarily.
+
+==================================================
+ACCESSIBILITY REQUIREMENTS
+==================================================
+
+Include:
+
+- Good color contrast
+- Keyboard navigation
+- Visible focus styles
+- Proper form labels
+- Accessible navigation
+- Image alt text
+- ARIA labels where needed
+- Accessible modal dialogs
+- Accessible mobile navigation
+- Support for prefers-reduced-motion
+
+==================================================
+WEB INSTALLATION SYSTEM
+==================================================
+
+Create a simple web-based installer at:
+
+/install
+
+The installer interface must be in Kurdish Sorani.
+
+The installer must:
+
+1. Check the PHP version.
+2. Check required PHP extensions.
+3. Check MySQL connection support.
+4. Check file and folder permissions.
+5. Ask for the database host.
+6. Ask for the database name.
+7. Ask for the database username.
+8. Ask for the database password.
+9. Ask for the website URL.
+10. Ask for the administrator name.
+11. Ask for the administrator email.
+12. Ask for the administrator password.
+13. Import the database schema.
+14. Create database tables.
+15. Create the first administrator securely.
+16. Create the configuration file.
+17. Mark installation as complete.
+18. Prevent the installer from running again.
+19. Display a Kurdish success message.
+20. Tell the administrator to delete or lock the install folder.
+
+Validate all installer input.
+
+Do not display database passwords after submission.
+
+Also provide a manual installation method.
+
+==================================================
+CONFIGURATION SYSTEM
+==================================================
+
+Create a simple secure configuration system.
+
+Provide:
+
+- config.example.php or another safe example configuration file
+- Database configuration
+- Website base URL configuration
+- Upload path configuration
+- Debug mode configuration
+- Error logging configuration
+
+Do not expose database credentials publicly.
+
+Do not display technical database errors to visitors.
+
+Log technical errors privately.
+
+Disable detailed PHP error output in production.
+
+==================================================
+NAMECHEAP CPANEL DEPLOYMENT GUIDE
+==================================================
+
+Create a complete README.md file.
+
+Explain in clear steps:
+
+1. How to create a MySQL database in Namecheap cPanel.
+2. How to create a database user.
+3. How to assign the database user to the database.
+4. How to grant database permissions.
+5. How to import database.sql through phpMyAdmin.
+6. How to upload files into public_html.
+7. How to extract a ZIP file in cPanel.
+8. How to edit database configuration.
+9. How to connect the domain.
+10. How to enable SSL.
+11. How to force HTTPS.
+12. How to set file and folder permissions.
+13. How to log in to the admin dashboard.
+14. How to change the administrator password.
+15. How to configure SMTP.
+16. How to create database backups.
+17. How to create file backups.
+18. How to move the project from Replit to Namecheap.
+19. How to solve common 403 errors.
+20. How to solve common 404 errors.
+21. How to solve common 500 errors.
+22. How to solve database connection errors.
+23. How to solve upload permission errors.
+24. How to change the PHP version in cPanel.
+
+Do not provide instructions requiring Node.js.
+
+==================================================
+BACKUP AND MAINTENANCE
+==================================================
+
+Create an admin backup section.
+
+The administrator must be able to:
+
+- Export the MySQL database as an SQL file
+- Download the database backup
+- View the last backup date
+- Export important settings
+- Clear safe temporary files
+- Clear generated cache
+- View backup history when possible
+
+Protect backup downloads.
+
+Only the Super Admin may access backups.
+
+Do not create a button that can accidentally delete the entire website.
+
+Use strong confirmation before destructive actions.
+
+==================================================
+PROJECT STRUCTURE
+==================================================
+
+Use a clean project structure similar to:
+
+/
+├── admin/
+├── assets/
+│   ├── css/
+│   ├── js/
+│   ├── images/
+│   └── fonts/
+├── config/
+├── includes/
+├── templates/
+├── uploads/
+│   ├── palettes/
+│   ├── products/
+│   ├── projects/
+│   ├── posts/
+│   ├── media/
+│   ├── qr/
+│   ├── barcodes/
+│   └── thumbnails/
+├── libraries/
+├── install/
+├── api/
+├── logs/
+├── index.php
+├── palettes.php
+├── palette.php
+├── products.php
+├── product.php
+├── projects.php
+├── project.php
+├── posts.php
+├── post.php
+├── search.php
+├── scanner.php
+├── contact.php
+├── sitemap.php
+├── database.sql
+├── .htaccess
+└── README.md
+
+You may improve this structure where necessary.
+
+However, it must remain compatible with Namecheap Shared Hosting.
+
+==================================================
+CODE QUALITY REQUIREMENTS
+==================================================
+
+Write clean, secure, reusable, understandable code.
+
+Requirements:
+
+- Avoid duplicated code.
+- Use reusable functions.
+- Separate templates from business logic.
+- Separate database logic.
+- Use a consistent naming convention.
+- Add useful comments.
+- Handle errors gracefully.
+- Use PDO prepared statements.
+- Escape output.
+- Validate input.
+- Protect forms with CSRF tokens.
+- Do not leave incomplete pages.
+- Do not leave fake buttons.
+- Do not create buttons that do nothing.
+- Do not use lorem ipsum.
+- Use correct Kurdish Sorani sample content.
+- Ensure all links work.
+- Ensure all forms work.
+- Ensure the mobile menu works.
+- Ensure CRUD operations work.
+- Ensure QR-code generation works.
+- Ensure barcode generation works.
+- Ensure label printing works.
+- Ensure the installer works.
+- Ensure the website works with HTTPS.
+- Ensure the project works without Replit services.
+
+==================================================
+DEVELOPMENT PROCESS
+==================================================
+
+Build the project in clear phases.
+
+PHASE 1:
+
+- Create the complete project structure.
+- Create database.sql.
+- Create the database connection.
+- Create the configuration system.
+- Create the installation system.
+- Create administrator authentication.
+- Create roles and permissions.
+
+PHASE 2:
+
+- Create the complete public design.
+- Create the header.
+- Create the footer.
+- Create the homepage.
+- Create the responsive layout.
+- Create website settings.
+- Create social-media management.
+
+PHASE 3:
+
+- Create palettes.
+- Create shades.
+- Create palette search.
+- Create manual code search.
+- Create QR-code generation.
+- Create barcode generation.
+- Create scanner page.
+- Create printable labels.
+- Create PDF label download.
+
+PHASE 4:
+
+- Create products.
+- Create product categories.
+- Create projects.
+- Create before-and-after functionality.
+- Create posts.
+- Create gallery.
+- Create slideshow management.
+- Create media library.
+
+PHASE 5:
+
+- Add security improvements.
+- Add SEO.
+- Add performance optimization.
+- Add backups.
+- Add activity logs.
+- Add deployment documentation.
+- Test the complete system.
+
+After each phase:
+
+- Test all created functions.
+- Fix PHP warnings.
+- Fix PHP notices.
+- Fix fatal errors.
+- Test all database queries.
+- Test mobile responsiveness.
+- Test RTL layout.
+- Test Kurdish text rendering.
+- Test administrator permissions.
+- Do not remove previously completed features.
+- Do not replace PHP or MySQL with another technology.
+
+Do not only explain how to build the project.
+
+Actually create all required folders, files, database tables, pages, forms, dashboard sections, and working code inside the Replit project.
+
+Do not stop after creating a visual prototype.
+
+Do not create only static HTML pages.
+
+Create a fully working PHP and MySQL system.
+
+==================================================
+FINAL STRICT VERIFICATION
+==================================================
+
+Before considering the project complete, verify all of the following:
+
+1. The project uses PHP 8.1 or newer.
+2. The project uses MySQL only.
+3. The project uses HTML, CSS, and vanilla JavaScript.
+4. The project contains no Node.js dependency.
+5. The project contains no package.json dependency.
+6. The project requires no npm command.
+7. The project requires no build command.
+8. The project uses no PostgreSQL.
+9. The project uses no Replit Database.
+10. The project uses no Neon.
+11. The project uses no Firebase.
+12. The project uses no Supabase.
+13. The project works on Namecheap Shared Hosting.
+14. The project works through cPanel and Apache.
+15. The project can be uploaded into public_html.
+16. The complete database.sql file is included.
+17. The public website is completely in Kurdish Sorani.
+18. The admin dashboard is completely in Kurdish Sorani.
+19. The installer is completely in Kurdish Sorani.
+20. All forms and messages are in Kurdish Sorani.
+21. Social-media links can be added from the dashboard.
+22. Social-media links can be edited from the dashboard.
+23. Social-media links can be deleted from the dashboard.
+24. Social-media links can be enabled or disabled.
+25. Social-media links can be reordered.
+26. Custom social-media platforms can be added.
+27. No social-media URL is permanently hardcoded.
+28. All social-media changes immediately appear publicly.
+29. Palette QR codes work.
+30. Palette barcodes work.
+31. Shade QR codes work.
+32. Shade barcodes work.
+33. Manual palette search works.
+34. Manual shade search works.
+35. The camera scanner has a manual-search fallback.
+36. Printable labels work.
+37. PDF label download works.
+38. Product management works.
+39. Project management works.
+40. Post management works.
+41. Slideshow management works.
+42. Media management works.
+43. Admin authentication is secure.
+44. CSRF protection is implemented.
+45. PDO prepared statements are used.
+46. File uploads are validated.
+47. Database backups work.
+48. README.md contains Namecheap deployment instructions.
+49. The project does not depend on Replit after download.
+50. No requested feature is represented by a fake or non-working button.
+
+If any existing part of the project violates these requirements, rewrite that part immediately using only PHP 8, MySQL, HTML, CSS, and vanilla JavaScript.
+
+Do not ask to switch technologies.
+
+Do not simplify or remove the core requirements.
+
+Do not respond with explanations only.
+
+Begin now by creating the project structure, database schema, configuration system, installer, and secure administrator authentication. Then continue through every phase until the complete working website is finished.

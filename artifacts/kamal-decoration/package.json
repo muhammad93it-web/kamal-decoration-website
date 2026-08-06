@@ -1,0 +1,9 @@
+{
+  "name": "@workspace/kamal-decoration",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "bash dev/start.sh",
+    "build": "bash dev/build-noop.sh"
+  }
+}

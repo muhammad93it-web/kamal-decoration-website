@@ -1,0 +1,3 @@
+- [Pure-PHP artifact on Replit](php-artifact-harness.md) — how to preview a shared-hosting PHP+MySQL deliverable inside the pnpm monorepo without contaminating it.
+- [chillerlan php-qrcode v5 output](chillerlan-qrcode-v5.md) — `outputType` picks the renderer (default = SVG markup); `outputInterface` alone is silently ignored.
+- [PHP function hoisting vs includes](php-function-hoisting.md) — a top-level function in a page file is compiled before its `require bootstrap` line runs, so duplicate names fatal inside the include.

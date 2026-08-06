@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "دیکۆراتی کەمال — Kamal Decoration"
+description = "A complete Kurdish (Sorani, RTL) website + admin dashboard for Kamal Decoration, a premium home decoration business in Ranya. Built as a portable PHP 8 + MySQL system (palettes with QR/barcodes, products, projects, posts, media library, settings) that can be exported to Namecheap shared hosting."
+version = "1.0.0"
+id = "artifacts/kamal-decoration"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 20995
+
+[services.development]
+run = "pnpm --filter @workspace/kamal-decoration run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/kamal-decoration", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/kamal-decoration/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "20995"
+BASE_PATH = "/"

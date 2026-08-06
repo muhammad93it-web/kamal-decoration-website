@@ -1,0 +1,9 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "Bk84-_RY8r6LTDYzlBa7x"
+uri = "file://artifacts/kamal-decoration/kamal-decoration-site.zip"
+type = "unspecified"
+title = "فایلی ماڵپەڕ بۆ Namecheap (ZIP)"
+description = "هەموو فایلەکانی ماڵپەڕی دیکۆراتی کەمال + database.sql + دامەزرێنەری کوردی — ئامادە بۆ بارکردن بۆ هۆستی Namecheap."
