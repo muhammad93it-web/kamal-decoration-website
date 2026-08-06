@@ -5,5 +5,5 @@ generated = []
 id = "Bk84-_RY8r6LTDYzlBa7x"
 uri = "file://artifacts/kamal-decoration/kamal-decoration-site.zip"
 type = "unspecified"
-title = "فایلی ماڵپەڕ بۆ Namecheap (ZIP)"
-description = "هەموو فایلەکانی ماڵپەڕی دیکۆراتی کەمال + database.sql + دامەزرێنەری کوردی — ئامادە بۆ بارکردن بۆ هۆستی Namecheap."
+title = "فایلی نوێکراوەی ماڵپەڕ (ZIP) — چارەسەری کێشەی دیزاین"
+description = "هەمان فایلی ماڵپەڕ بەڵام بە چارەسەری نوێ — دیزاینەکە لە هەر دۆمەین و هەر باردۆخێک کار دەکات. بیخەرە سەر public_html و Extract بکە."
