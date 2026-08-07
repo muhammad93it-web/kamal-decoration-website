@@ -40,7 +40,7 @@ ini_set('error_log', LOG_DIR . '/php-errors.log');
 
 // ── session ─────────────────────────────────────────────────────
 if (PHP_SAPI !== 'cli' && session_status() === PHP_SESSION_NONE) {
-    session_name('kd_session');
+    session_name('rd_session');
     session_set_cookie_params([
         'lifetime' => 0,
         'path' => '/',

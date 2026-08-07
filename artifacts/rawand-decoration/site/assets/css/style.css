@@ -11,8 +11,8 @@
   --beige: #e9dfd2;
   --beige-soft: #f3ece1;
   --wood: #a9805b;
-  --accent: #bfa05a;
-  --accent-deep: #a5884a;
+  --accent: #46549b;
+  --accent-deep: #38437c;
   --green: #1ea85c;
   --line: rgba(35, 33, 32, 0.12);
   --line-soft: rgba(35, 33, 32, 0.07);
@@ -104,7 +104,7 @@ p { margin: 0 0 1em; }
   border: 1px solid var(--line); background: var(--paper); font: 0.88rem var(--font-body);
   transition: 0.2s;
 }
-.header-search input:focus { outline: none; border-color: var(--accent); width: 260px; box-shadow: 0 0 0 3px rgba(191, 160, 90, 0.15); }
+.header-search input:focus { outline: none; border-color: var(--accent); width: 260px; box-shadow: 0 0 0 3px rgba(70, 84, 155, 0.15); }
 
 .suggest-box {
   position: absolute; top: calc(100% + 8px); inset-inline: 0; min-width: 300px;
@@ -249,14 +249,14 @@ a.chip:hover, .chip.active { background: var(--charcoal); color: var(--bone); bo
 /* why us */
 .grid-why { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
 .why-item { text-align: center; padding: 30px 20px; border-radius: var(--radius); background: rgba(250, 247, 242, 0.04); border: 1px solid rgba(250, 247, 242, 0.09); }
-.why-icon { width: 58px; height: 58px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center; background: rgba(191, 160, 90, 0.14); color: var(--accent); }
+.why-icon { width: 58px; height: 58px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center; background: rgba(70, 84, 155, 0.14); color: var(--accent); }
 .why-icon svg { width: 26px; height: 26px; }
 .why-item h3 { font-size: 1rem; margin-bottom: 8px; color: var(--bone); }
 .why-item p { font-size: 0.85rem; color: rgba(250, 247, 242, 0.6); margin: 0; }
 
 /* ── page hero (interior pages) ──────────────────────────── */
 .page-hero { background: var(--charcoal); color: var(--bone); padding: 58px 0 50px; position: relative; overflow: hidden; }
-.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(600px 300px at 85% 20%, rgba(191, 160, 90, 0.16), transparent 70%); }
+.page-hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(600px 300px at 85% 20%, rgba(70, 84, 155, 0.16), transparent 70%); }
 .page-hero .container { position: relative; }
 .page-title { font-size: clamp(1.5rem, 3.4vw, 2.3rem); font-weight: 800; color: #fff; }
 .page-sub { color: rgba(250, 247, 242, 0.68); margin: 10px 0 0; max-width: 640px; }
@@ -277,7 +277,7 @@ select, input[type="text"], input[type="search"], input[type="email"], input[typ
   padding: 11px 15px; border-radius: 11px; border: 1px solid var(--line); background: var(--paper);
   transition: 0.18s; max-width: 100%;
 }
-select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(191, 160, 90, 0.15); }
+select:focus, input:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(70, 84, 155, 0.15); }
 textarea { width: 100%; resize: vertical; min-height: 130px; }
 label { display: block; font-size: 0.86rem; font-weight: 600; margin-bottom: 7px; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }

@@ -11,6 +11,16 @@ $site = realpath(__DIR__ . '/../site');
 $uri  = urldecode((string)parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $uri  = '/' . ltrim($uri, '/');
 
+// Reject dot segments outright — the manual static streaming below must never
+// resolve a path outside site/ (php -S no longer guards us there).
+foreach (explode('/', $uri) as $seg) {
+    if ($seg === '.' || $seg === '..') {
+        http_response_code(404);
+        echo 'Not Found';
+        return true;
+    }
+}
+
 // Strip the dev base-path prefix (preview proxy forwards it unchanged)
 $bp = rtrim((string)(getenv('BASE_PATH') ?: ''), '/');
 if ($bp !== '' && $bp !== '/') {
@@ -45,7 +55,15 @@ if ($uri !== '/' && is_file($file)) {
         return false; // no prefix: let the built-in server stream static files
     }
     // With a prefix the built-in server would resolve the ORIGINAL URI and 404,
-    // so stream the file ourselves.
+    // so stream the file ourselves. Containment check: only files strictly
+    // inside site/ may ever be streamed.
+    $real = realpath($file);
+    if ($real === false || !str_starts_with($real, $site . DIRECTORY_SEPARATOR)) {
+        http_response_code(404);
+        echo 'Not Found';
+        return true;
+    }
+    $file = $real;
     $ext = strtolower(pathinfo($file, PATHINFO_EXTENSION));
     $mime = [
         'css' => 'text/css', 'js' => 'application/javascript', 'mjs' => 'application/javascript',

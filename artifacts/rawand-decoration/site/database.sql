@@ -88,7 +88,7 @@ INSERT INTO `settings` (`setting_key`,`setting_value`) VALUES
 ('maintenance','0'),
 ('posts_per_page','12'),
 ('site_url',''),
-('color_accent','#BFA05A'),
+('color_accent','#46549B'),
 ('color_dark','#232120'),
 ('color_bg','#FAF7F2'),
 ('announce_text','');
