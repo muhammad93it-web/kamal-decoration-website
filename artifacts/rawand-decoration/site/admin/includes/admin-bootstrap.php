@@ -86,7 +86,7 @@ function admin_header(string $title, string $active = ''): void
 <meta name="robots" content="noindex,nofollow">
 <title><?= e($title) ?> — <?= e(t('a_panel', 'بەڕێوەبردن')) ?> | <?= e(setting('site_name', 'دیکۆراتی ڕەوەند')) ?></title>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
-<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=2">
 <style>:root{--accent:<?= e(setting('color_accent', '#BFA05A')) ?>;}</style>
 <script>window.KD_BASE = <?= json_encode(site_path(), JSON_UNESCAPED_SLASHES) ?>;</script>
 </head>
@@ -139,7 +139,7 @@ function admin_footer(): void
 {
     ?>
 </main>
-<script src="<?= e(url('admin/assets/admin.js')) ?>?v=1"></script>
+<script src="<?= e(url('admin/assets/admin.js')) ?>?v=2"></script>
 </body>
 </html><?php
 }

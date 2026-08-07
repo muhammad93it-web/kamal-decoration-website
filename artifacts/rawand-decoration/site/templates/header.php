@@ -31,7 +31,7 @@ $navItems = [
 <link rel="icon" href="<?= e(upload_url(setting('favicon_path'))) ?>">
 <?php endif; ?>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
-<link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>?v=2">
 <style>:root{--accent:<?= e(setting('color_accent', '#46549B')) ?>;}</style>
 <script>window.KD_BASE = <?= json_encode(site_path(), JSON_UNESCAPED_SLASHES) ?>;</script>
 </head>
