@@ -1,7 +1,9 @@
-# KAMAL DECORATION — دیکۆراتی کەمال
+# KAMAL DECORATION — دیکۆراتی کەمال (+ RAWAND DECORATION — دیکۆراتی ڕەوەند)
 
 ## Overview
 Production website + admin dashboard for **Kamal Decoration**, a home-decoration business in Ranya, Kurdistan (phone/WhatsApp 0750 024 4706). Built per the detailed prompt in `attached_assets/Kamal_Decoration_Replit_AI_Prompt_1786038074264.txt`.
+
+**Second site (Aug 2026): `artifacts/rawand-decoration/`** — a fully independent clone named **دیکۆراتی ڕەوەند / Rawand Decoration** (phone/WhatsApp/Telegram/Viber 0750 103 8181, wa.me/tel use 9647501038181), destined for the user's OTHER cPanel hosting + a new domain he is buying. Same stack, same conventions, zero shared files/DB with Kamal. Preview at `/rawand` (artifact previewPath); dev DB `rawand_decoration` on 127.0.0.1:3308, socket `/tmp/rawand-mysql.sock`, dev admin **admin / Rawand@2026**. Its `dev/router.php` additionally strips the `BASE_PATH` env prefix and streams static files itself (php -S would 404 prefixed asset URLs); `site/tools/dev-seed.php` appends BASE_PATH to `site_url`. Never edit Kamal and Rawand as if they were one site — changes are per-business unless the user explicitly asks to apply to both.
 
 **Deliverable stack (non-negotiable):** PHP 8.1+ / MySQL / HTML / CSS / vanilla JS / PDO. No Node, no frameworks, no CDNs — everything vendored. Deploys to Namecheap shared hosting by uploading `site/` and following the Kurdish README inside it.
 

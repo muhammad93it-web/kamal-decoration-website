@@ -1,3 +1,5 @@
 - [Pure-PHP artifact on Replit](php-artifact-harness.md) — how to preview a shared-hosting PHP+MySQL deliverable inside the pnpm monorepo without contaminating it.
+- [Cloning an artifact](artifact-cloning.md) — copied .replit-artifact keeps the old immutable id; rm the dir, write a fresh toml (new id/port/path), then verify with an identical temp file.
+- [php -S behind a path prefix](php-artifact-harness.md) — router must strip BASE_PATH and stream static files itself; returning false makes php -S resolve the ORIGINAL prefixed URI → 404.
 - [chillerlan php-qrcode v5 output](chillerlan-qrcode-v5.md) — `outputType` picks the renderer (default = SVG markup); `outputInterface` alone is silently ignored.
 - [PHP function hoisting vs includes](php-function-hoisting.md) — a top-level function in a page file is compiled before its `require bootstrap` line runs, so duplicate names fatal inside the include.

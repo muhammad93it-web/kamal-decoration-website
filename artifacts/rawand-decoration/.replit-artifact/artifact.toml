@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/rawand"
+title = "دیکۆراتی ڕەوەند — Rawand Decoration"
+description = "A complete Kurdish (Sorani, RTL) website + admin dashboard for Rawand Decoration — an independent copy of the Kamal Decoration system for a separate business, domain, and hosting. Built as a portable PHP 8 + MySQL system (palettes with QR/barcodes, products, projects, posts, media library, settings) that can be exported to shared cPanel hosting."
+version = "1.0.0"
+id = "artifacts/rawand-decoration"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/rawand" ]
+localPort = 21096
+
+[services.development]
+run = "pnpm --filter @workspace/rawand-decoration run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/rawand-decoration", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/rawand-decoration/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21096"
+BASE_PATH = "/rawand"
