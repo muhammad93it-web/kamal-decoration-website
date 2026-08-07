@@ -7,3 +7,10 @@ uri = "file://artifacts/kamal-decoration/kamal-decoration-site.zip"
 type = "unspecified"
 title = "فایلی نوێکراوەی ماڵپەڕ (ZIP) — چارەسەری کێشەی دیزاین"
 description = "هەمان فایلی ماڵپەڕ بەڵام بە چارەسەری نوێ — دیزاینەکە لە هەر دۆمەین و هەر باردۆخێک کار دەکات. بیخەرە سەر public_html و Extract بکە."
+
+[[outputs]]
+id = "un-LCnn9mEaZHSkUgihpn"
+uri = "file://artifacts/kamal-decoration/qr-website.png"
+type = "image"
+title = "QR — kamal-decoration.com"
+description = "QR کۆدی ماڵپەڕەکەت — سکانی بکە دەچێتە سەر kamal-decoration.com"
