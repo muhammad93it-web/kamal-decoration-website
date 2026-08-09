@@ -134,6 +134,8 @@ if (!$installed && $_SERVER['REQUEST_METHOD'] === 'POST' && ($_POST['do'] ?? '')
     if (!$errors) {
         try {
             $pdo = kd_pdo($d['host'], $d['port'], $d['name'], $d['user'], $d['pass']);
+            // the dump seeds a default admin — remove any same-name user first (user_roles cascades)
+            $pdo->prepare('DELETE FROM users WHERE username = ?')->execute([$username]);
             $st = $pdo->prepare('INSERT INTO users (username, display_name, password_hash, is_active) VALUES (?,?,?,1)');
             $st->execute([$username, $display, password_hash($password, PASSWORD_DEFAULT)]);
             $uid = (int)$pdo->lastInsertId();

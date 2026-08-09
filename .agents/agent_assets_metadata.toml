@@ -26,12 +26,26 @@ description = "زیپی تەواوی سایتی ڕەوەند (نیلی) بۆ ب�
 id = "ucxfIt89BztyxikR4YKSa"
 uri = "file://artifacts/kamal-decoration/kamal-decoration-site-v2.zip"
 type = "unspecified"
-title = "کەمال دیکۆر — وەشانی v2"
-description = "فایلی تەواوی سایتی کەمال بۆ Namecheap — سلایدەری نوێ + چاککردنی پانێڵ (v2)"
+title = "کەمال دیکۆر — v2 (نوێکراوە: ئەدمین لەگەڵدایە)"
+description = "زیپی نوێکراوە — ئێستا database.sql هەژماری ئەدمینی تێدایە"
 
 [[outputs]]
 id = "by7Q1d0Qay9--GMn8J0dC"
 uri = "file://artifacts/rawand-decoration/rawand-decoration-site-v2.zip"
 type = "unspecified"
-title = "ڕەوەند دیکۆر — وەشانی v2"
-description = "فایلی تەواوی سایتی ڕەوەند بۆ Namecheap — سلایدەری نوێ + چاککردنی پانێڵ (v2)"
+title = "ڕەوەند دیکۆر — v2 (نوێکراوە: ئەدمین لەگەڵدایە)"
+description = "زیپی نوێکراوە — ئێستا database.sql هەژماری ئەدمینی تێدایە"
+
+[[outputs]]
+id = "wNwRoGtvQSOY4jL1yW4zi"
+uri = "file://artifacts/kamal-decoration/kamal-admin-fix.sql"
+type = "unspecified"
+title = "چاککردنی ئەدمین — کەمال (ئێستا ئەمە باركە)"
+description = "فایلی بچووک — لە phpMyAdmin باری بکە بۆ دروستکردنی هەژماری ئەدمین"
+
+[[outputs]]
+id = "dGnpenGU3LhrPino-CkVe"
+uri = "file://artifacts/rawand-decoration/rawand-admin-fix.sql"
+type = "unspecified"
+title = "چاککردنی ئەدمین — ڕەوەند"
+description = "هەمان چاککردن بۆ سایتی ڕەوەند، کاتێک ئەویش باردەکەیت"
