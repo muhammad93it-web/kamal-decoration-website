@@ -14,3 +14,10 @@ uri = "file://artifacts/kamal-decoration/qr-website.png"
 type = "image"
 title = "QR — kamal-decoration.com"
 description = "QR کۆدی ماڵپەڕەکەت — سکانی بکە دەچێتە سەر kamal-decoration.com"
+
+[[outputs]]
+id = "NX-KzMaOODn0IBJlqfuPh"
+uri = "file://artifacts/rawand-decoration/rawand-decoration-site.zip"
+type = "unspecified"
+title = "دیکۆراتی ڕەوەند — فایلی سایت بۆ هۆستینگ"
+description = "زیپی تەواوی سایتی ڕەوەند (نیلی) بۆ بارکردن لە cPanel — لەگەڵ دامەزرێنەری کوردی و ڕێنمایی README"
