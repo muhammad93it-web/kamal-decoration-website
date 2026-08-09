@@ -8,6 +8,14 @@ if (!defined('KD_ADMIN_PUBLIC')) {
     require_login();
 }
 
+// admin pages must never be cached — otherwise the browser "back" button
+// shows stale unread rows / badge counts after an action
+if (!headers_sent()) {
+    header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0');
+    header('Pragma: no-cache');
+    header('Expires: 0');
+}
+
 /** Purify rich HTML (Quill output). Falls back to strip_tags when the vendor lib is absent. */
 function kd_purify(string $html): string
 {
@@ -86,7 +94,7 @@ function admin_header(string $title, string $active = ''): void
 <meta name="robots" content="noindex,nofollow">
 <title><?= e($title) ?> — <?= e(t('a_panel', 'بەڕێوەبردن')) ?> | <?= e(setting('site_name', 'دیکۆراتی کەمال')) ?></title>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
-<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=<?= e(KD_VERSION) ?>">
 <style>:root{--accent:<?= e(setting('color_accent', '#BFA05A')) ?>;}</style>
 <script>window.KD_BASE = <?= json_encode(site_path(), JSON_UNESCAPED_SLASHES) ?>;</script>
 </head>
@@ -117,6 +125,7 @@ function admin_header(string $title, string $active = ''): void
   <div class="a-side-foot">
     <a href="<?= e(url('')) ?>" target="_blank">🌐 <?= e(t('a_view_site', 'بینینی ماڵپەڕ')) ?></a>
     <a href="<?= e(admin_url('logout.php')) ?>">🚪 <?= e(t('a_logout', 'چوونەدەرەوە')) ?></a>
+    <span class="a-ver" dir="ltr"><?= e(t('a_version', 'وەشان')) ?> <?= e(KD_VERSION) ?></span>
   </div>
 </aside>
 <div class="a-side-backdrop" id="aSideBackdrop" hidden></div>
@@ -139,7 +148,7 @@ function admin_footer(): void
 {
     ?>
 </main>
-<script src="<?= e(url('admin/assets/admin.js')) ?>?v=1"></script>
+<script src="<?= e(url('admin/assets/admin.js')) ?>?v=<?= e(KD_VERSION) ?>"></script>
 </body>
 </html><?php
 }

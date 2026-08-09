@@ -54,7 +54,7 @@
 
   <div class="footer-bottom">
     <div class="container">
-      <span>© <?= date('Y') ?> <?= e(setting('site_name', 'دیکۆراتی کەمال')) ?> — <?= e(t('footer_rights')) ?></span>
+      <span>© <?= date('Y') ?> <?= e(setting('site_name', 'دیکۆراتی کەمال')) ?> — <?= e(t('footer_rights')) ?> <span class="site-ver" dir="ltr"><?= e(KD_VERSION) ?></span></span>
       <span class="footer-bottom-links">
         <a href="<?= e(url('privacy.php')) ?>"><?= e(t('privacy_title')) ?></a>
         <a href="<?= e(url('terms.php')) ?>"><?= e(t('terms_title')) ?></a>
@@ -78,6 +78,6 @@
   <button class="lightbox-next" id="lightboxNext" aria-label="»">›</button>
 </div>
 
-<script src="<?= e(asset('js/main.js')) ?>?v=1" defer></script>
+<script src="<?= e(asset('js/main.js')) ?>?v=<?= e(KD_VERSION) ?>" defer></script>
 </body>
 </html>

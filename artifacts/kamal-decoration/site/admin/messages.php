@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         db()->prepare('UPDATE contact_messages SET is_read = 0 WHERE id = ?')->execute([$id]);
         redirect(admin_url('messages.php'));
     }
+    if ($act === 'read_all') {
+        db()->exec('UPDATE contact_messages SET is_read = 1 WHERE is_read = 0');
+        flash('success', t('a_msg_all_read', 'هەموو پەیامەکان وەک خوێندراو دانران ✓'));
+        redirect(admin_url('messages.php'));
+    }
 }
 
 $view = (int)($_GET['id'] ?? 0);
@@ -71,37 +76,47 @@ admin_header(t('a_messages', 'پەیامەکان'), 'messages');
 <div class="toolbar">
   <a class="btn <?= $only === '' ? 'btn-gold' : 'btn-ghost' ?>" href="<?= e(admin_url('messages.php')) ?>"><?= e(t('a_msg_all', 'هەموو')) ?></a>
   <a class="btn <?= $only === 'unread' ? 'btn-gold' : 'btn-ghost' ?>" href="<?= e(admin_url('messages.php?f=unread')) ?>"><?= e(t('a_msg_unread', 'نەخوێندراوەکان')) ?></a>
+  <?php if (unread_messages_count() > 0): ?>
+    <form method="post" style="margin-inline-start:auto">
+      <?= csrf_field() ?><input type="hidden" name="act" value="read_all">
+      <button class="btn btn-ghost" type="submit">✓ <?= e(t('a_msg_read_all', 'هەموو وەک خوێندراو دابنێ')) ?></button>
+    </form>
+  <?php endif; ?>
 </div>
 
 <div class="tbl-wrap panel" style="padding:0">
   <table class="tbl">
-    <tr>
-      <th><?= e(t('a_f_name', 'ناو')) ?></th>
-      <th><?= e(t('contact_phone', 'ژمارەی مۆبایل')) ?></th>
-      <th><?= e(t('a_msg_subject', 'بابەت')) ?></th>
-      <th><?= e(t('a_date', 'بەروار')) ?></th>
-      <th style="width:1%"></th>
-    </tr>
-    <?php if (!$rows): ?>
-      <tr><td colspan="5" class="tac muted" style="padding:30px"><?= e(t('a_msg_none', 'هیچ پەیامێک نییە')) ?></td></tr>
-    <?php endif; ?>
-    <?php foreach ($rows as $r): ?>
-      <tr <?= !$r['is_read'] ? 'style="background:#FCF9F3;font-weight:700"' : '' ?>>
-        <td><a href="<?= e(admin_url('messages.php?id=' . (int)$r['id'])) ?>"><?= !$r['is_read'] ? '● ' : '' ?><?= e($r['name']) ?></a></td>
-        <td dir="ltr"><?= e($r['phone']) ?></td>
-        <td><?= e(excerpt_of($r['subject'] ?: $r['message'], 44)) ?></td>
-        <td><?= e(kdate($r['created_at'])) ?></td>
-        <td>
-          <div class="row-actions">
-            <a class="btn btn-ghost btn-xs" href="<?= e(admin_url('messages.php?id=' . (int)$r['id'])) ?>">👁</a>
-            <form method="post" data-confirm="<?= e(t('a_confirm_delete', 'دڵنیایت لە سڕینەوە؟')) ?>" style="display:inline">
-              <?= csrf_field() ?><input type="hidden" name="act" value="delete"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>">
-              <button class="btn btn-danger btn-xs" type="submit">🗑</button>
-            </form>
-          </div>
-        </td>
+    <thead>
+      <tr>
+        <th scope="col"><?= e(t('a_f_name', 'ناو')) ?></th>
+        <th scope="col"><?= e(t('contact_phone', 'ژمارەی مۆبایل')) ?></th>
+        <th scope="col"><?= e(t('a_msg_subject', 'بابەت')) ?></th>
+        <th scope="col"><?= e(t('a_date', 'بەروار')) ?></th>
+        <th scope="col" style="width:1%"><span class="sr-only"><?= e(t('a_actions', 'کردارەکان')) ?></span></th>
       </tr>
-    <?php endforeach; ?>
+    </thead>
+    <tbody>
+      <?php if (!$rows): ?>
+        <tr><td colspan="5" class="tac muted" style="padding:30px"><?= e(t('a_msg_none', 'هیچ پەیامێک نییە')) ?></td></tr>
+      <?php endif; ?>
+      <?php foreach ($rows as $r): ?>
+        <tr<?= !$r['is_read'] ? ' class="unread"' : '' ?>>
+          <td><a href="<?= e(admin_url('messages.php?id=' . (int)$r['id'])) ?>"><?= !$r['is_read'] ? '<span class="unread-dot">●</span> ' : '' ?><?= e($r['name']) ?></a></td>
+          <td dir="ltr"><?= e($r['phone']) ?></td>
+          <td><?= e(excerpt_of($r['subject'] ?: $r['message'], 44)) ?></td>
+          <td><?= e(kdate($r['created_at'])) ?></td>
+          <td>
+            <div class="row-actions">
+              <a class="btn btn-ghost btn-xs" href="<?= e(admin_url('messages.php?id=' . (int)$r['id'])) ?>">👁</a>
+              <form method="post" data-confirm="<?= e(t('a_confirm_delete', 'دڵنیایت لە سڕینەوە؟')) ?>" style="display:inline">
+                <?= csrf_field() ?><input type="hidden" name="act" value="delete"><input type="hidden" name="id" value="<?= (int)$r['id'] ?>">
+                <button class="btn btn-danger btn-xs" type="submit">🗑</button>
+              </form>
+            </div>
+          </td>
+        </tr>
+      <?php endforeach; ?>
+    </tbody>
   </table>
 </div>
 

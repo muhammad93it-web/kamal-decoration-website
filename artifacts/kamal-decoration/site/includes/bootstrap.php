@@ -7,6 +7,7 @@ declare(strict_types=1);
 
 mb_internal_encoding('UTF-8');
 define('APP_ROOT', dirname(__DIR__));
+define('KD_VERSION', 'v2'); // وەشانی کۆد — لە ژێرپەڕە و پانێڵی بەڕێوەبردن دەردەکەوێت
 
 require_once APP_ROOT . '/includes/helpers.php';
 require_once APP_ROOT . '/includes/csrf.php';

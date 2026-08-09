@@ -102,4 +102,20 @@
       });
     });
   }
+
+  /* keep scroll position across saves (POST → redirect → same page) */
+  var SKEY = 'rdAdminScroll';
+  document.addEventListener('submit', function () {
+    try { sessionStorage.setItem(SKEY, location.pathname + location.search + '|' + Math.round(window.scrollY)); } catch (err) {}
+  }, true);
+  try {
+    var sv = sessionStorage.getItem(SKEY);
+    if (sv) {
+      sessionStorage.removeItem(SKEY);
+      var cut = sv.lastIndexOf('|');
+      if (sv.slice(0, cut) === location.pathname + location.search) {
+        window.scrollTo(0, parseInt(sv.slice(cut + 1), 10) || 0);
+      }
+    }
+  } catch (err) {}
 })();

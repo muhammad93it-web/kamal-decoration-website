@@ -29,9 +29,11 @@ $navItems = [
 <?php seo_head($PAGE); ?>
 <?php if (setting('favicon_path') !== ''): ?>
 <link rel="icon" href="<?= e(upload_url(setting('favicon_path'))) ?>">
+<?php else: ?>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23bfa05a'/%3E%3Ctext x='32' y='45' font-size='34' text-anchor='middle' fill='%23fff' font-family='Tahoma,sans-serif'%3E%DA%A9%3C/text%3E%3C/svg%3E">
 <?php endif; ?>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
-<link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(asset('css/style.css')) ?>?v=<?= e(KD_VERSION) ?>">
 <style>:root{--accent:<?= e(setting('color_accent', '#BFA05A')) ?>;}</style>
 <script>window.KD_BASE = <?= json_encode(site_path(), JSON_UNESCAPED_SLASHES) ?>;</script>
 </head>
@@ -68,7 +70,8 @@ $navItems = [
       <a class="icon-btn scan-btn" href="<?= e(url('scanner.php')) ?>" title="<?= e(t('nav_scanner')) ?>" aria-label="<?= e(t('nav_scanner')) ?>">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 7V5a2 2 0 0 1 2-2h2M17 3h2a2 2 0 0 1 2 2v2M21 17v2a2 2 0 0 1-2 2h-2M7 21H5a2 2 0 0 1-2-2v-2"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg>
       </a>
-      <?php foreach (social_links('header') as $l): ?>
+      <?php /* cap header icons so the bar never wraps — the rest stay in footer/drawer */ ?>
+      <?php foreach (array_slice(social_links('header'), 0, 5) as $l): ?>
         <a class="icon-btn header-social" href="<?= e($l['url']) ?>" target="_blank" rel="noopener" title="<?= e($l['name']) ?>" aria-label="<?= e($l['name']) ?>"><?= social_icon($l['platform']) ?></a>
       <?php endforeach; ?>
     </div>

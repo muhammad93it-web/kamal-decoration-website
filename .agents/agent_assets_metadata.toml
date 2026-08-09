@@ -21,3 +21,17 @@ uri = "file://artifacts/rawand-decoration/rawand-decoration-site.zip"
 type = "unspecified"
 title = "دیکۆراتی ڕەوەند — فایلی سایت بۆ هۆستینگ"
 description = "زیپی تەواوی سایتی ڕەوەند (نیلی) بۆ بارکردن لە cPanel — لەگەڵ دامەزرێنەری کوردی و ڕێنمایی README"
+
+[[outputs]]
+id = "ucxfIt89BztyxikR4YKSa"
+uri = "file://artifacts/kamal-decoration/kamal-decoration-site-v2.zip"
+type = "unspecified"
+title = "کەمال دیکۆر — وەشانی v2"
+description = "فایلی تەواوی سایتی کەمال بۆ Namecheap — سلایدەری نوێ + چاککردنی پانێڵ (v2)"
+
+[[outputs]]
+id = "by7Q1d0Qay9--GMn8J0dC"
+uri = "file://artifacts/rawand-decoration/rawand-decoration-site-v2.zip"
+type = "unspecified"
+title = "ڕەوەند دیکۆر — وەشانی v2"
+description = "فایلی تەواوی سایتی ڕەوەند بۆ Namecheap — سلایدەری نوێ + چاککردنی پانێڵ (v2)"

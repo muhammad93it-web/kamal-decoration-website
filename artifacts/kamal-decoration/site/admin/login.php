@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <meta name="robots" content="noindex,nofollow">
 <title><?= e(t('a_login_title', 'چوونەژوورەوە')) ?> — <?= e(setting('site_name', 'دیکۆراتی کەمال')) ?></title>
 <link rel="stylesheet" href="<?= e(asset('css/fonts.css')) ?>">
-<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=1">
+<link rel="stylesheet" href="<?= e(url('admin/assets/admin.css')) ?>?v=<?= e(KD_VERSION) ?>">
 </head>
 <body class="login-body">
   <div class="login-card">

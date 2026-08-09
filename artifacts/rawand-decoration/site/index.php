@@ -54,7 +54,7 @@ require APP_ROOT . '/templates/header.php';
 ?>
 
 <!-- هێرۆ -->
-<section class="hero">
+<section class="hero" id="hero">
   <?php if ($slides): foreach ($slides as $i => $s): ?>
     <div class="hero-slide<?= $i === 0 ? ' active' : '' ?>"
          data-title="<?= e($s['title'] ?? '') ?>" data-sub="<?= e($s['subtitle'] ?? '') ?>">
@@ -83,7 +83,23 @@ require APP_ROOT . '/templates/header.php';
       <?php endif; ?>
     </div>
   </div>
-  <div class="hero-dots" id="heroDots"></div>
+
+  <?php if (count($slides) > 1): ?>
+    <div class="hero-thumbs" id="heroThumbs">
+      <?php foreach (array_slice($slides, 1, 3) as $k => $s): ?>
+        <button class="hero-thumb" type="button" data-go="<?= $k + 1 ?>" aria-label="<?= e($s['title'] ?? '') ?>">
+          <img src="<?= e(upload_url($s['image'])) ?>" alt="">
+          <span class="ht-label"><?= e($s['title'] ?? '') ?></span>
+        </button>
+      <?php endforeach; ?>
+    </div>
+    <div class="hero-nav">
+      <button type="button" id="heroPrev" aria-label="<?= e(t('hero_prev', 'سلایدی پێشوو')) ?>">›</button>
+      <span class="hero-count" id="heroCount"><?= e(knum(1)) ?> / <?= e(knum(count($slides))) ?></span>
+      <button type="button" id="heroNext" aria-label="<?= e(t('hero_next', 'سلایدی دواتر')) ?>">‹</button>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  <?php endif; ?>
 </section>
 
 <!-- بەشە سەرەکییەکان -->
@@ -183,26 +199,6 @@ require APP_ROOT . '/templates/header.php';
   </div>
 </section>
 <?php endif; ?>
-
-<script>
-/* rotate hero text with slides when a slide has its own title */
-document.addEventListener('DOMContentLoaded', function () {
-  var defaults = {
-    title: document.getElementById('heroTitle') ? document.getElementById('heroTitle').textContent : '',
-    sub: document.getElementById('heroSub') ? document.getElementById('heroSub').textContent : ''
-  };
-  var obs = new MutationObserver(function () {
-    var act = document.querySelector('.hero-slide.active');
-    if (!act) return;
-    var tEl = document.getElementById('heroTitle'), sEl = document.getElementById('heroSub');
-    if (tEl) tEl.textContent = act.dataset.title || defaults.title;
-    if (sEl) sEl.textContent = act.dataset.sub || defaults.sub;
-  });
-  document.querySelectorAll('.hero-slide').forEach(function (s) {
-    obs.observe(s, { attributes: true, attributeFilter: ['class'] });
-  });
-});
-</script>
 
 <?php jsonld_localbusiness(); ?>
 <?php require APP_ROOT . '/templates/footer.php'; ?>

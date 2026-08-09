@@ -33,28 +33,115 @@
   backdrop && backdrop.addEventListener('click', () => setDrawer(false));
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') setDrawer(false); });
 
-  /* hero slideshow */
-  const slides = $$('.hero-slide');
-  const dotsWrap = $('#heroDots');
-  if (slides.length > 1) {
-    let cur = 0, timer = null;
+  /* hero slider — thumbnail-expand style */
+  const hero = $('#hero') || $('.hero');
+  const slides = hero ? $$('.hero-slide', hero) : [];
+  if (hero && slides.length > 1) {
+    const thumbsBox = $('#heroThumbs');
+    const thumbs = thumbsBox ? $$('.hero-thumb', thumbsBox) : [];
+    const dotsWrap = $('#heroDots');
+    const nextBtn = $('#heroNext'), prevBtn = $('#heroPrev'), countEl = $('#heroCount');
+    const content = $('.hero-content', hero);
+    const tEl = $('#heroTitle'), sEl = $('#heroSub');
+    const defaults = { t: tEl ? tEl.textContent : '', s: sEl ? sEl.textContent : '' };
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const knum = (n) => String(n); // site convention: Latin digits (matches knum() in PHP)
+    let cur = 0, busy = false, timer = null, inView = true;
+
     const dots = slides.map((_, i) => {
       const b = document.createElement('button');
       b.type = 'button';
-      b.setAttribute('aria-label', 'سلاید ' + (i + 1));
-      b.addEventListener('click', () => { go(i); restart(); });
+      b.setAttribute('aria-label', 'سلاید ' + knum(i + 1));
+      if (i === 0) b.classList.add('active');
+      b.addEventListener('click', () => go(i));
       dotsWrap && dotsWrap.appendChild(b);
       return b;
     });
-    function go(i) {
-      slides[cur].classList.remove('active');
-      dots[cur] && dots[cur].classList.remove('active');
-      cur = (i + slides.length) % slides.length;
-      slides[cur].classList.add('active');
-      dots[cur] && dots[cur].classList.add('active');
+
+    /* thumbs always preview the upcoming slides, like a deck */
+    function paintMeta() {
+      dots.forEach((d, i) => d.classList.toggle('active', i === cur));
+      if (countEl) countEl.textContent = knum(cur + 1) + ' / ' + knum(slides.length);
+      thumbs.forEach((th, k) => {
+        const idx = (cur + k + 1) % slides.length;
+        th.dataset.go = idx;
+        const img = th.querySelector('img'), lbl = th.querySelector('.ht-label');
+        const src = slides[idx].querySelector('img');
+        if (img && src) img.src = src.currentSrc || src.src;
+        if (lbl) lbl.textContent = slides[idx].dataset.title || '';
+      });
     }
-    function restart() { clearInterval(timer); timer = setInterval(() => go(cur + 1), 6000); }
-    go(0); restart();
+
+    function swapText() {
+      if (!content) return;
+      content.classList.add('hero-text-out');
+      setTimeout(() => {
+        if (tEl) tEl.textContent = slides[cur].dataset.title || defaults.t;
+        if (sEl) sEl.textContent = slides[cur].dataset.sub || defaults.s;
+        content.classList.remove('hero-text-out');
+      }, reduced ? 0 : 230);
+    }
+
+    function activate(idx) {
+      slides[cur].classList.remove('active');
+      cur = idx;
+      slides[cur].classList.add('active');
+      swapText();
+      paintMeta();
+    }
+
+    function go(idx, viaThumb) {
+      idx = ((idx % slides.length) + slides.length) % slides.length;
+      if (busy || idx === cur) return;
+      restart();
+      const th = viaThumb || thumbs.find((t) => +t.dataset.go === idx) || null;
+      const canFlip = th && !reduced && th.offsetParent !== null;
+      if (!canFlip) { activate(idx); return; }
+      busy = true;
+      /* FLIP: clone the thumb and let it grow into the full hero */
+      const r = th.getBoundingClientRect(), hr = hero.getBoundingClientRect();
+      const clone = document.createElement('div');
+      clone.className = 'hero-flip-clone';
+      const img = document.createElement('img');
+      const target = slides[idx].querySelector('img');
+      const thImg = th.querySelector('img');
+      img.src = (target && (target.currentSrc || target.src)) || (thImg ? thImg.src : '');
+      clone.appendChild(img);
+      clone.style.cssText = 'top:' + r.top + 'px;left:' + r.left + 'px;width:' + r.width + 'px;height:' + r.height + 'px;';
+      document.body.appendChild(clone);
+      th.classList.add('is-flying');
+      void clone.offsetWidth;
+      clone.style.top = hr.top + 'px';
+      clone.style.left = hr.left + 'px';
+      clone.style.width = hr.width + 'px';
+      clone.style.height = hr.height + 'px';
+      clone.style.borderRadius = '0px';
+      setTimeout(() => {
+        activate(idx);
+        th.classList.remove('is-flying');
+        clone.style.opacity = '0';
+        setTimeout(() => { clone.remove(); busy = false; }, 260);
+      }, 730);
+    }
+
+    function restart() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (!inView || document.hidden || busy) return;
+        go(cur + 1);
+      }, 6500);
+    }
+
+    nextBtn && nextBtn.addEventListener('click', () => go(cur + 1));
+    prevBtn && prevBtn.addEventListener('click', () => go(cur - 1));
+    thumbs.forEach((th) => th.addEventListener('click', function () { go(+this.dataset.go, this); }));
+    hero.addEventListener('mouseenter', () => clearInterval(timer));
+    hero.addEventListener('mouseleave', restart);
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((en) => { inView = !!(en[0] && en[0].isIntersecting); }, { threshold: 0.15 }).observe(hero);
+    }
+    paintMeta();
+    restart();
   } else if (slides.length === 1) {
     slides[0].classList.add('active');
   }
