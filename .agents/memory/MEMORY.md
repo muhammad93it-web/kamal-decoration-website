@@ -4,3 +4,4 @@
 - [chillerlan php-qrcode v5 output](chillerlan-qrcode-v5.md) — `outputType` picks the renderer (default = SVG markup); `outputInterface` alone is silently ignored.
 - [PHP function hoisting vs includes](php-function-hoisting.md) — a top-level function in a page file is compiled before its `require bootstrap` line runs, so duplicate names fatal inside the include.
 - [PHP admin form/caching lessons](php-admin-forms.md) — admin pages need no-store (stale badge on back), bulk forms need hidden default submit (Enter ≠ delete), bulk ids must be intersected with existing rows.
+- [Hosting delivery phase](hosting-delivery-phase.md) — user is TESTING on Namecheap: full database.sql re-import OK for now; once they declare "final", deliveries must be file-only + migration SQL, never a wipe.
